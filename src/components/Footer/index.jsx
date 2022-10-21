@@ -38,6 +38,7 @@ const Footer = () => {
             hover="hover:bg-primary-green-print-200"
             href="https://wa.me/5585991001754"
             whatsapp={true}
+            target="_blank"
           />
         </div>
       </div>

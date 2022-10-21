@@ -8,6 +8,7 @@ const Button = ({
   href,
   onPress = () => {},
   whatsapp = false,
+  target = "",
 }) => {
   return (
     <a
@@ -15,7 +16,7 @@ const Button = ({
       type="button"
       href={href}
       onClick={onPress}
-      target="_blank"
+      target={target}
       rel="noopener noreferrer"
     >
       {whatsapp && <BsWhatsapp className="mr-2" />}

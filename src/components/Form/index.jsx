@@ -184,6 +184,7 @@ const Form = ({ modalIsOpen }) => {
           )}
           <Button
             title="Entrar em contato"
+            target="_blank"
             href={`https://wa.me/5585991001754?&text=SERVIÇO:%20${
               modifications.service
             };%20ALTURA:%20${modifications.height}cm;%20LARGURA:%20${
