@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  @apply bg-neutral-very-light-gray;
+}
+
+.modal {
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.8
+  ); /* Overlay effect: translucent background: black w/ partial opacity */
+  z-index: 1; /* Overlay effect: positioned over other containers */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto; /* Enable scroll if needed */
+  padding-top: 120px;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+/* Modal content */
+.modal-content {
+  width: 70%;
+  height: 70%;
+  margin-inline: auto;
+}
+/* Close button */
+.close {
+  color: #aaaaaa;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 50px;
+  font-size: 50px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
