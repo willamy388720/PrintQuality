@@ -8,8 +8,8 @@ import Button from "../shared/Button";
 const Footer = () => {
   return (
     <section id="footer" className="relative">
-      <div className="bg-primary-blue-print-500 flex flex-col sm:flex-row justify-center items-center sm:justify-around py-28">
-        <div data-aos="fade-right" className="w-4/12 sm:w-3/12">
+      <div className="bg-primary-blue-print-500 flex flex-col sm:flex-row justify-center items-center sm:items-start sm:justify-around py-28">
+        <div data-aos="fade-right" className="w-8/12 sm:w-5/12">
           <h1 className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-white font-bold">
             Nosso Endereço
           </h1>
@@ -28,18 +28,20 @@ const Footer = () => {
             Ver no mapa <AiOutlineArrowRight className="ml-1" />
           </a>
         </div>
-        <div data-aos="fade-left" className="w-4/12">
+        <div data-aos="fade-left" className="w-8/12 sm:w-5/12">
           <h1 className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-white  mb-4 lg:mb-6 font-bold">
             Para mais informações, entre em contato:
           </h1>
-          <Button
-            title="Nosso Whatsapp"
-            backgroundColor="bg-primary-green-print-100"
-            hover="hover:bg-primary-green-print-200"
-            href="https://wa.me/5585991001754"
-            whatsapp={true}
-            target="_blank"
-          />
+          <div className="w-11/12">
+            <Button
+              title="Nosso Whatsapp"
+              backgroundColor="bg-primary-green-print-100"
+              hover="hover:bg-primary-green-print-200"
+              href="https://wa.me/5585991001754"
+              whatsapp={true}
+              target="_blank"
+            />
+          </div>
         </div>
       </div>
       <div className="bg-primary-blue-print-400 w-full h-full flex sm:flex-row flex-col sm:justify-around items-center py-6">
