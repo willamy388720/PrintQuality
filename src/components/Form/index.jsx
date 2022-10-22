@@ -60,7 +60,11 @@ const Form = ({ modalIsOpen }) => {
         inputs.qty !== "" &&
         inputs.material !== ""
       ) {
-        value = findMaterial();
+        materials.map((item) => {
+          if (item.name === inputs.material) {
+            value = item.price;
+          }
+        });
         area =
           (parseFloat(inputs.height) / 100) * parseFloat(inputs.width / 100);
         setPrice(area * value * inputs.qty + designPrice);
@@ -75,14 +79,6 @@ const Form = ({ modalIsOpen }) => {
       }
     }
   }, [inputs, errors, checked]);
-
-  const findMaterial = () => {
-    materials.map((item) => {
-      if (item.name === inputs.material) {
-        return item.price;
-      }
-    });
-  };
 
   const handleChange = (value, input) => {
     if (input === "height" || input === "width" || input === "qty") {
@@ -103,14 +99,14 @@ const Form = ({ modalIsOpen }) => {
     <section id="form" className="relative h-[56rem] md:h-[48rem]">
       <h1
         data-aos="fade-down"
-        className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-primary-blue-print-300 md:absolute md:right-0 md:left-0 md:top-20 font-bold text-center mt-10 md:mt-0"
+        className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-primary-blue-print-300 lg:absolute lg:right-0 lg:left-0 lg:top-20 font-bold text-center mt-10 lg:mt-0"
       >
         Faça o seu orçamento
       </h1>
-      <div className="flex md:flex-row flex-col-reverse justify-center md:justify-between items-center container md:absolute w-full md:-bottom-20">
+      <div className="flex lg:flex-row flex-col-reverse justify-center lg:justify-between items-center container lg:absolute w-full lg:-bottom-20">
         <form
           data-aos="fade-up"
-          class={`bg-primary-blue-print-400 w-10/12 md:w-6/12 py-6 px-8 md:py-10 md:px-12 lg:py-14 lg:px-20 rounded-xl ${
+          class={`bg-primary-blue-print-400 w-10/12 lg:w-6/12 py-6 px-8 lg:py-14 lg:px-20 rounded-xl ${
             modalIsOpen ? "z-0" : "z-10"
           } shadow-slate-900 shadow-2xl`}
         >
@@ -134,7 +130,7 @@ const Form = ({ modalIsOpen }) => {
             <>
               <div class="flex flex-wrap -mx-3 mb-6">
                 <Input
-                  className="w-full lg:w-1/2 px-3"
+                  className="w-full lg:w-1/2 px-3 mb-6 lg:mb-0"
                   label="Altura cm"
                   placeholder="Ex.: 140"
                   onChange={(e) => handleChange(e.target.value, "height")}
@@ -152,7 +148,7 @@ const Form = ({ modalIsOpen }) => {
               </div>
               <div class="flex flex-wrap -mx-3 mb-6">
                 <Input
-                  className="w-full lg:w-1/2 px-3"
+                  className="w-full lg:w-1/2 px-3  mb-6 lg:mb-0"
                   label="Quantidade"
                   placeholder="Ex.: 5"
                   onChange={(e) => handleChange(e.target.value, "qty")}
@@ -179,7 +175,8 @@ const Form = ({ modalIsOpen }) => {
               </label>
               <p className="text-lg md:text-lg lg:text-2xl text-white font-bold my-4 md:my-8 lg:my-12">
                 Valor Estimado: R$ {price.toFixed(2)}
-              </p>{" "}
+                {console.log(price)}
+              </p>
             </>
           )}
           <Button

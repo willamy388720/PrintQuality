@@ -2,7 +2,7 @@ import React from "react";
 
 const WhoWeAre = () => {
   return (
-    <section id="whoweare" className="relative flex mb-5">
+    <section id="whoweare" className="relative flex mb-6">
       <div className="container h-screen relative flex sm:justify-between justify-center items-center md:flex-row flex-col-reverse">
         <div data-aos="fade-right" className="md:w-2/5">
           <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl text-primary-blue-print-300 font-bold mb-5">
@@ -20,8 +20,8 @@ const WhoWeAre = () => {
           </p>
         </div>
         <div
-          data-aos="fade-left"
-          className="bg-contain bg-center bg-whoweare-desktop h-full w-8/12 md:w-2/5 bg-no-repeat mb-6"
+          data-aos="fade-up"
+          className="bg-contain bg-center bg-whoweare-desktop h-[20rem] md:h-full w-8/12 md:w-2/5 bg-no-repeat"
         ></div>
       </div>
     </section>
